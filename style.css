@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --prim-orange: hsl(31, 77%, 52%);
+  --prim-cyan: hsl(184, 100%, 22%);
+  --prim-darker-cyan: hsl(179, 100%, 13%);
+
+  --neu-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --neu-light-gray: hsl(0, 0%, 95%);
+
+  --ff-default: "Lexend Deca", sans-serif;
+  --ff-title: "Big Shoulders Display", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  padding: 0;
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  background: var(--neu-light-gray);
+  font-family: var(--ff-default);
+  height: 100vh;
+  display: flex;
+  font-size: 15px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+article {
+  width: 278px;
+  height: 50vh;
+  padding: 36px;
+  position: relative;
+}
+
+article.sedans {
+  background-color: var(--prim-orange);
+  border-radius: 7px 0 0 7px;
+}
+
+article.suvs {
+  background-color: var(--prim-cyan);
+}
+
+article.luxury {
+  background-color: var(--prim-darker-cyan);
+  border-radius: 0 7px 7px 0;
+}
+
+img {
+  margin-bottom: 36px;
+}
+
+h1 {
+  font-family: var(--ff-title);
+  font-size: 36px;
+  font-weight: var(--fw-bold);
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+article p {
+  font-size: 0.9rem;
+  color: var(--neu-transparent-white);
+  line-height: 1.5rem;
+}
+
+button {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  width: 146px;
+  padding: 10px;
+  border: 2px solid var(--neu-light-gray);
+  outline: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  bottom: 40px;
+}
+
+.sedans button {
+  color: var(--prim-orange);
+}
+
+.suvs button {
+  color: var(--prim-cyan);
+}
+
+.luxury button {
+  color: var(--prim-darker-cyan);
+}
+
+button:hover {
+  color: var(--neu-light-gray);
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 844px) {
+  body {
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+    flex-wrap: wrap;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  article.sedans {
+    border-radius: 9px 9px 0 0px;
+  }
+
+  article.luxury {
+    border-radius: 0 0px 9px 9px;
+  }
+}
